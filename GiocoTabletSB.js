@@ -151,7 +151,7 @@ function renderBoard() {
 				}
 			}
 			cell.addEventListener(
-				"touch",
+				"click",
 				() => revealCell(i, j)
 			);
 			gameBoard.appendChild(cell);
