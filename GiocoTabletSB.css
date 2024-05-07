@@ -1,0 +1,108 @@
+/* Styles.css */
+body {
+	font-family: Arial, sans-serif;
+	text-align: center;
+}
+.board {
+	display: inline-block;
+	margin: 20px;
+}
+.cell {
+	width: 150px;
+	height: 150px;
+	border: 5px solid #ccc;
+	display: inline-block;
+	text-align: center;
+	vertical-align: middle;
+	font-size: 100px;
+	cursor: pointer;
+
+	/* Default color for unrevealed tiles */
+	background-color: #eee;
+
+	/* Default color for unrevealed tile text */
+	color: #333;
+}
+.revealed {
+	/* Color for revealed tiles */
+	background-color: #ccc;
+
+	/* Color for revealed tile text */
+	color: #000;
+}
+.mine {
+	/* Color for mines */
+	background-color: #ff3333; /*ff3333*/
+}
+
+.popup {
+	position: fixed;
+	top:-100vh;
+	left:0px;
+	width:100%;
+	height:85%;
+	transition:top 0ms ease-in-out 300ms;
+}
+
+.popup .overlay {
+	position:absolute;
+	top:0px;
+	left:0px;
+	width:100%;
+	height:120%;
+	background:rgba(0,0,0,0.5);
+	opacity: 0;
+	transition: opacity 100ms ease-in-out 200ms;
+}
+
+.popup .popup-content {
+	position:absolute;
+	top:50%;
+	left:50%;
+	transform:translate(-50%,-50%) scale(1.15);
+	width:95%;
+	max-width:350px;
+	background:#fff;
+	padding:20px;
+	border-radius:20px;
+	opacity: 0;
+	box-shadow:0px 2px 2px 5px rgba(0,0,0,0.05);
+	transition:all 300ms ease-in-out;
+}
+
+.popup .popup-content h2 {
+	margin:10px 0px;
+	font-size:25px;
+	color: #111;
+	text-align:center;
+}
+
+.popup .popup-content .controls {
+	display:flex;
+	justify-content:space-between;
+	margin:20px 20px 0px;
+}
+
+.popup .popup-content .controls button {
+	padding:10px 20px;
+	border:none;
+	outline:none;
+	font-size:20px;
+	border-radius:20px;
+	cursor:pointer;
+}
+
+.popup.active {
+	top:0px;
+	transition:top 0ms ease-in-out 0ms;
+}
+
+.popup.active .overlay {
+	opacity:1;
+	transition:all 300ms ease-in-out;
+}
+
+.popup.active .popup-content {
+	transform:translate(-50%,-50%) scale(1);
+	opacity: 1;
+}
